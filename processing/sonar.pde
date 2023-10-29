@@ -2,8 +2,6 @@ import processing.serial.*;
 import java.awt.event.KeyEvent;
 import java.io.IOException;
 
-Serial myPort;
-
 // 
 //  Configuração serial
 // 
@@ -14,6 +12,7 @@ char    parity = 'O';     // E=even/par, O=odd/impar
 int   databits = 7;       // 7 bits de dados
 float stopbits = 1.0;     // 1 stop bit
 
+Serial myPort;
 String angle = "";
 String distance = "";
 String data = "";
@@ -47,7 +46,6 @@ void draw() {
     rect(0, -40, width, 480 + 40);
     fill(98,245,31); // verde
     
-    // chama funcoes para desenhar o sonar
     drawRadar(); 
     drawLine();
     drawObject();
