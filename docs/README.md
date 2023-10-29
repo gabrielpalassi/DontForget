@@ -20,13 +20,15 @@ A interface básica do sistema de sonar é composta pelos seguintes elementos:
 
 O sensor HC-SR04 é montado no servomotor, que pode girar para varrer uma área específica. Em cada posição angular, o sistema mede a distância ao objeto mais próximo. Essa informação é então enviada pela interface serial para um dispositivo de apresentação, geralmente um computador - neste repositório fornecemos um arquivo processing para a visualização facilitada da saída do sistema.
 
+O sistema envia os dados em formato "ângulo,distância#" via RS-232C com o modo de transmissão 7O1, 7 bits de dado, paridade ímpar (odd) e 1 stop bit, usando caracteres ASCII. Cada conjunto de informações (ângulo e distância) tem três dígitos BCD em código ASCII, separados por vírgula e finalizados por um hashtag.
+
 ## Montagem Física
 
-A montagem física do sistema de sonar envolve a fixação do sensor HC-SR04 no servomotor, permitindo que ele gire em relação ao seu eixo. A figura a seguir ilustra uma possível montagem:
+A montagem física do sistema de sonar envolve a fixação do sensor HC-SR04 no servomotor, permitindo que ele gire em relação ao seu eixo. As figuras a seguir ilustram uma possível montagem e o programa Processing recebendo os dados enviador pelo sonar:
 
 <img src="./images/montagem.png" width=612.5>
 
-Esta montagem física permite a varredura eficiente da área e a medição da distância a objetos próximos em várias direções.
+<img src="./images/processing.png" width=612.5>
 
 ## Utilização
 
