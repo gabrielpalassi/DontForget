@@ -1,37 +1,40 @@
-# 🔵🔴🟢🟡 Don't Forget
+# 📡 VHDLSonar
 
-O Don't Forget é um jogo eletrônico implementado em VHDL (VHSIC Hardware Description Language). Ele oferece uma experiência de jogo desafiadora e divertida, combinando elementos de memória e reflexos.
+Este repositório contém o código e a documentação relacionados ao projeto de um sistema de sonar digital que realiza a varredura e detecção de objetos próximos usando um sensor ultrassônico de distância e um servomotor. O sistema também fornece saída serial para um dispositivo de apresentação. 
 
-[Assista ao vídeo da implementação final aqui!](https://dms.licdn.com/playlist/vid/D4D05AQEEY0ItrWKh5g/mp4-720p-30fp-crf28/0/1681317428386?e=1699171200&v=beta&t=8_TksRSx_4gIdA5OXBqZZKRiwHGpEQR3G2NKqKGgigY)
+A implementação e testes foram realizados na placa de desenvolvimento FPGA DE0-CV, utilizando a infraestrutura disponível no Laboratório Digital da Universidade de São Paulo.
 
-Esse projeto fez parte da disciplina de Laboratório Digital 1 da Universdade de São Paulo e consistiu na implementação do jogo Genius completamente em hardware, utilizando uma placa FPGA para criar os circuitos lógicos necessários. O trabalho envolveu desde a criação da interface do jogo, da implementação dos diferentes modos e dificuldades até a lógica para a geração das sequências aleatórias de luzes e sons e a comparação com as jogadas do usuário.
+## Descrição do Projeto
 
-Divirta-se jogando e explorando a implementação!
+Sistemas digitais de detecção de objetos a distância desempenham um papel fundamental em várias aplicações, como radares, lidar e sonar. Este projeto concentra-se em um sistema de sonar, que utiliza ondas acústicas de alta frequência para medir a distância aos objetos próximos.
 
-## Sobre o Jogo
+O componente central deste sistema é o sensor de distância HC-SR04, que emite pulsos ultrassônicos a uma frequência de 40kHz. O sensor mede o tempo que os pulsos levam para viajar até um objeto e retornar, permitindo a determinação da distância até o objeto.
 
-O Genius é uma versão eletrônica da brincadeira "Simon says" que se tornou popular nos anos 80. O objetivo do jogo é reproduzir uma sequência de luzes e sons, sem cometer erros.
+O sistema de sonar também inclui um servomotor, que é responsável por posicionar o sensor de distância. O servomotor permite variação angular dentro dos limites especificados, o que possibilita a varredura e localização de objetos em diferentes direções.
 
-### Modo 1 de Jogo - Siga a Sequência
+## Interface do Sistema de Sonar
 
-Neste modo, o Genius inicia piscando uma luz, e o jogador deve repetir essa sequência. A cada rodada, o jogo adiciona mais uma luz à sequência, e o jogador deve repetir a sequência corretamente. Se o jogador cometer um erro ou demorar mais de 5 segundos para selecionar a próxima luz, o jogo termina.
+A interface básica do sistema de sonar é composta pelos seguintes elementos:
 
-### Modo 2 de Jogo - Crie a sua Sequência
+<img src="./images/elementos.png" width=612.5>
 
-No modo 2, o Genius dá o primeiro sinal, e os jogadores devem criar sua própria sequência. O primeiro jogador repete o sinal dado e adiciona um novo. O segundo jogador repete a sequência do primeiro jogador e adiciona mais um sinal, e assim por diante. O objetivo é criar a sequência mais longa possível.
+O sensor HC-SR04 é montado no servomotor, que pode girar para varrer uma área específica. Em cada posição angular, o sistema mede a distância ao objeto mais próximo. Essa informação é então enviada pela interface serial para um dispositivo de apresentação, geralmente um computador - neste repositório fornecemos um arquivo processing para a visualização facilitada da saída do sistema.
 
-## Seletor de Dificuldade
+## Montagem Física
 
-O projeto inclui um seletor de dificuldade com 3 níveis: fácil (1), médio (2) e difícil (3).
+A montagem física do sistema de sonar envolve a fixação do sensor HC-SR04 no servomotor, permitindo que ele gire em relação ao seu eixo. A figura a seguir ilustra uma possível montagem:
 
-### Modo 1 de Jogo - Siga a Sequência
+<img src="./images/montagem.png" width=612.5>
 
-No modo 1, o seletor de dificuldade controla a quantidade de rodadas necessárias para vencer o jogo. No nível 1 de dificuldade, são necessárias 8 rodadas para a vitória, no nível 2, 12 rodadas, e no nível 3, 16 rodadas.
+Esta montagem física permite a varredura eficiente da área e a medição da distância a objetos próximos em várias direções.
 
-### Modo 2 de Jogo - Crie a sua Sequência
+## Utilização
 
-No modo 2, cada jogador começa com uma quantidade definida de vidas. Cada vez que um jogador comete um erro, ele perde uma vida e passa a vez. Os níveis de dificuldade afetam a quantidade de vidas no início do jogo: no nível 1, cada jogador começa com 4 vidas, no nível 2 com 2 vidas e no nível 3 com 1 vida.
+Para implementar este projeto, você precisará de:
 
-## Recursos Externos
+1. Placa de desenvolvimento FPGA DE0-CV.
+2. Sensor de distância HC-SR04.
+3. Servomotor.
+4. Conexão serial com um dispositivo de apresentação (como um computador).
 
-Neste projeto, utilizamos displays de 7 segmentos, buzzers, botões e LEDs externos. Certifique-se de configurar e pinar esses recursos adequadamente caso venha a implantar o projeto.
+Certifique-se de seguir as instruções de montagem e configuração apropriadas para o seu ambiente.
