@@ -2,7 +2,7 @@
 
 Implementação em hardware (VHDL) de um sistema de sonar digital que realiza a varredura e detecção de objetos próximos usando um sensor ultrassônico de distância e um servomotor, e fornece saída serial para um dispositivo de apresentação. 
 
-A montagem e testes foram realizados na placa de desenvolvimento FPGA DE0-CV, utilizando a infraestrutura disponível no Laboratório Digital da Universidade de São Paulo.
+A montagem e testes foram realizados na placa de desenvolvimento FPGA DE0-CV, utilizando a infraestrutura disponível no Laboratório Digital da Universidade de São Paulo. O Relatório final pode ser encontrado [nesse aquivo](./Relatório%20&%20Documentação.pdf).
 
 ## Descrição do Projeto
 
