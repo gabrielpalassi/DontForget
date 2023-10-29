@@ -1,8 +1,8 @@
 # 📡 VHDLSonar
 
-Este repositório contém o código e a documentação relacionados ao projeto de um sistema de sonar digital que realiza a varredura e detecção de objetos próximos usando um sensor ultrassônico de distância e um servomotor. O sistema também fornece saída serial para um dispositivo de apresentação. 
+Implementação em hardware (VHDL) de um sistema de sonar digital que realiza a varredura e detecção de objetos próximos usando um sensor ultrassônico de distância e um servomotor, e fornece saída serial para um dispositivo de apresentação. 
 
-A implementação e testes foram realizados na placa de desenvolvimento FPGA DE0-CV, utilizando a infraestrutura disponível no Laboratório Digital da Universidade de São Paulo.
+A montagem e testes foram realizados na placa de desenvolvimento FPGA DE0-CV, utilizando a infraestrutura disponível no Laboratório Digital da Universidade de São Paulo.
 
 ## Descrição do Projeto
 
